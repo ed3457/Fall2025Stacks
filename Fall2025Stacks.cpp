@@ -2,10 +2,38 @@
 //
 
 #include <iostream>
-
+#include "Stack.h"
+using namespace std; 
 int main()
 {
-    std::cout << "Hello World!\n";
+	Stack st1;
+
+	st1.push(10);
+	st1.push(20);
+	st1.push(30);
+	st1.push(40);
+	/*st1.pop();
+	cout << st1.top() << endl;*/
+
+	// write code to sum the items in a stack: 
+
+	Stack temp;
+	int sum = 0;
+	int tempElement;
+	while (!st1.isEmpty())
+	{   
+		tempElement = st1.pop();
+		temp.push(tempElement);
+		sum += tempElement;
+
+	}
+
+	cout << sum << endl;
+
+	while (!temp.isEmpty())
+	{
+		st1.push(temp.pop());
+	}
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
